@@ -72,95 +72,49 @@ a:hover {
   text-decoration: underline;
 }
 
-.projects .project {
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-item {
+  padding: 1.5rem;
+  border: 1px solid #999;
   display: flex;
-  gap: 1.5rem;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-top: 1.5rem;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.image-container {
-  flex: 1 1 250px;
-  background: #000;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  max-width: 300px;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.2s;
+.project-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
-.image-container:hover {
-  transform: scale(1.02);
+.project-item p {
+  color: #333333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1;
 }
 
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: black;
+.project-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
-.project-info {
-  flex: 2 1 300px;
-}
-
-.project-info h3 {
-  margin: 0.5rem 0;
-}
-
-.btn {
-  margin-right: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  background: #eee;
+.project-links a {
+  color: #007acc;
   text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  border: 1px solid #007acc;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn:hover {
-  background: #ccc;
-}
-
-/* Modal styles */
-.modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 999;
-}
-
-.modal.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal img {
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
-  background: black;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-}
-
-.modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
+.project-links a:hover {
+  background-color: #007acc;
+  color: #ffffff;
 }

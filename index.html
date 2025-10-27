@@ -11,57 +11,15 @@
   <main>
     <header class="site-header">
       <h1 class="cross-header">mizuki.codes</h1>
-      <p class="resume"><a href="https://hikaru.org/Mizuki-Hikaru-Resume.pdf">Resume</a></p>
+      <p class="resume"><a href="https://hikaru.org/Mizuki-Hikaru-Resume.pdf" target="_blank">Resume</a></p>
     </header>
 
     <section class="about">
       <h2>About Me</h2>
       <p>I've been a software engineer for 20 years. I focus on building robust, maintainable, and efficient systems.</p>
-    </section>
-
-    <section class="projects">
-      <h2>Projects</h2>
-
-      <div class="project">
-        <div class="image-container">
-          <img src="project1.png" alt="Contact Form Website Screenshot" />
-        </div>
-        <div class="project-info">
-          <h3>FormFlow - Effortless Contact Forms</h3>
-          <p>
-            I brought this service down because nobody was using it, but the
-            general idea was that a user would sign up with their email, and
-            then they would be presented with a HTML form they could add to
-            their website. The form would submit to my backend which would then
-            forward the request to their email address.
-          </p>
-          <a href="https://github.com/mizuki-hikaru/formflow" class="btn">Code</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="image-container">
-          <img src="project2.png" alt="Authbase Screenshot" />
-        </div>
-        <div class="project-info">
-          <h3>AuthBase - A Lightweight Authentication Library</h3>
-          <p>
-            AuthBase is a lightweight authentication library for FastAPI apps.
-            Provides plug-and-play routes for sign-up and login. Authentication
-            works via a one-time authentication link sent to the user's email.
-            It is designed for simplicity and quick integration with minimal
-            boilerplate.
-          </p>
-          <a href="https://github.com/mizuki-hikaru/authbase" class="btn">Code</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact">
-      <h2>Contact</h2>
       <p>
         Reach out via email (<a id="email" href="#"></a>) or
-        <a href="https://www.linkedin.com/in/mizukihikaru/">LinkedIn</a>.
+        <a href="https://www.linkedin.com/in/mizukihikaru/" target="_blank">LinkedIn</a>.
       </p>
       <script>
         const user = 'mizuki';
@@ -70,35 +28,51 @@
         document.getElementById("email").textContent = `${user}@${host}`;
       </script>
     </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-item">
+          <h3>PlasticAdrift</h3>
+          <p>Shows where plastic ends up in the ocean.</p>
+          <div class="project-links">
+            <a href="https://plasticadrift.org" target="_blank">Website</a>
+          </div>
+        </div>
+        <div class="project-item">
+          <h3>ModestAnalytics</h3>
+          <p>A privacy-first analytics platform.</p>
+          <div class="project-links">
+            <a href="https://modestanalytics.com" target="_blank">Website</a>
+            <a href="https://github.com/mizuki-hikaru/modestanalytics" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <div class="project-item">
+          <h3>LoanTimeline</h3>
+          <p>CLI tool that calculates how soon you will have your loan repayed.</p>
+          <div class="project-links">
+            <a href="https://loantimeline.org" target="_blank">Website</a>
+            <a href="https://github.com/mizuki-hikaru/loantimeline" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <div class="project-item">
+          <h3>YAML to Resume</h3>
+          <p>Upload a YAML file, get back an ATS-friendly PDF resume.</p>
+          <div class="project-links">
+            <a href="https://yaml2resume.com" target="_blank">Website</a>
+            <a href="https://github.com/mizuki-hikaru/yaml2resume" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <div class="project-item">
+          <h3>YAMLdoc</h3>
+          <p>Turns a YAML file and Jinja2 template into HTML or PDF.</p>
+          <div class="project-links">
+            <a href="https://yamldoc.org" target="_blank">Website</a>
+            <a href="https://github.com/mizuki-hikaru/yamldoc" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <!-- Modal -->
-  <div class="modal" id="imageModal">
-    <span class="modal-close" id="modalClose">&times;</span>
-    <img id="modalImage" src="" alt="Full view" />
-  </div>
-
-  <script>
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.getElementById('modalClose');
-
-    document.querySelectorAll('.image-container img').forEach(img => {
-      img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        modal.classList.add('show');
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('show');
-    });
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('show');
-      }
-    });
-  </script>
 </body>
 </html>
